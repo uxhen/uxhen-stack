@@ -1,8 +1,9 @@
 @import url("./reset.css");
 /* Start Variables */
 :root {
-  --main-color: #8da3b9;
-  --main-color-alt: #8da3b9;
+  --main-color: #2196f3;
+  --main-color-alt: #1787e0;
+  --section-secodery-background: #ececec;
   --main-transition-duration: 0.3s;
   --main-animation-duration: 2s;
   --section-top-padding: 30px;
@@ -25,8 +26,7 @@ section {
   margin-left: auto;
   margin-right: auto;
   padding: 15px 30px;
-  border: 2px solid var(--main-color);
-  color: black;
+  border: 2px solid black;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -53,7 +53,7 @@ section {
   border-radius: 50%;
   position: absolute;
   top: 50%;
-  left: -20px;
+  left: -25px;
   transform: translateY(-50%);
 }
 .main-title::after {
@@ -64,7 +64,7 @@ section {
   border-radius: 50%;
   position: absolute;
   top: 50%;
-  right: -20px;
+  right: -25px;
   transform: translateY(-50%);
 }
 .main-title:hover::after {
@@ -135,7 +135,7 @@ section {
 
 /* Start header */
 header {
-  box-shadow: 0 2px 15px rgb(0 0 0 /10%);
+  box-shadow: 0 2px 15px #dadada;
 }
 header .container {
   display: flex;
@@ -183,14 +183,15 @@ header .container nav > ul {
 }
 
 header .container nav > ul > li > a {
-  color: var(--main-color);
   height: 100%;
+  font-weight: 700;
   min-height: 60px;
   display: flex;
   align-items: center;
   overflow: hidden;
   padding: 0 20px;
   position: relative;
+  color: black;
 }
 
 header .container nav > ul > li > a:after {
@@ -285,7 +286,7 @@ header .container nav > ul > li:last-child:hover .menu {
   top: 0;
   width: 100%;
   height: 100%;
-  background: #ececec;
+  background: var(--section-secodery-background);
   z-index: -1;
   transform: skewY(-8deg);
   transform-origin: top left;
@@ -309,9 +310,9 @@ header .container nav > ul > li:last-child:hover .menu {
 }
 
 .landing .container .content h1 {
-  color: var(--main-color);
   font-size: 28px;
   font-weight: 900;
+  margin-bottom: 15px;
 }
 
 .landing .container .content p {
@@ -319,7 +320,7 @@ header .container nav > ul > li:last-child:hover .menu {
   margin-bottom: 10px;
   line-height: 1.6;
   font-size: 20px;
-  color: #888;
+  color: #666;
 }
 
 @media (max-width: 767px) {
@@ -334,6 +335,7 @@ header .container nav > ul > li:last-child:hover .menu {
   }
 }
 .landing .container .image {
+  margin: 0 auto;
   animation-name: move-up-and-down;
   animation-duration: var(--main-animation-duration);
   animation-timing-function: linear;
@@ -459,7 +461,7 @@ header .container nav > ul > li:last-child:hover .menu {
 /* End Articles */
 /* Start Gallery */
 .gallery {
-  background: #ececec;
+  background: var(--section-secodery-background);
 }
 .gallery .container {
   display: grid;
