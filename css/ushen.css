@@ -1,4 +1,4 @@
-@import url("./reset.css");
+@import url("reset.css");
 /* Start Variables */
 :root {
   --main-color: #2196f3;
@@ -386,8 +386,9 @@ header .container nav > ul > li:last-child:hover .menu {
   bottom: 30px;
   font-size: 25px;
   animation-name: bouncing;
-  animation-duration: var(--main-animation-duration);
-  animation-timing-function: ease-in;
+  animation-duration: calc(var(--main-animation-duration) / 1.5);
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
   animation-iteration-count: infinite;
 }
 
@@ -416,13 +417,14 @@ header .container nav > ul > li:last-child:hover .menu {
   10%,
   30%,
   60%,
-  80% {
+  80%,
+  100% {
     transform: translate(-50%, 0);
   }
-  20%,
   40%,
+  90%,
   100% {
-    transform: translate(-50%, -10px);
+    transform: translate(-50%, -20px);
   }
 }
 /* End Animation */
