@@ -508,7 +508,13 @@ header .container nav > ul > li:last-child:hover .menu {
 .gallery .container .box {
   background: #fff;
   padding: 10px;
+  box-shadow: 0 2px 15px 0 rgb(0 0 0 / 30%);
 }
+
+.gallery .container .box:hover {
+  box-shadow: 0 2px 15px rgb(0 0 0 / 60%);
+}
+
 .gallery .container .box:hover .image img {
   transform: scale(1.2) rotate(6deg);
 }
@@ -540,10 +546,14 @@ header .container nav > ul > li:last-child:hover .menu {
 }
 /* Start Animation */
 @keyframes flashing {
+  0%,
+  30% {
+    opacity: 1;
+  }
   100% {
     width: 200%;
     height: 200%;
-    opacity: 1;
+    opacity: 0;
   }
 }
 /* End Animation */
