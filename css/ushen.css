@@ -4,9 +4,10 @@
   --main-color: #2196f3;
   --main-color-alt: #1787e0;
   --section-secodery-background: #ececec;
-  --muted-white-color: #fafafa;
-  --main-transition-duration: 0.3s;
-  --main-animation-duration: 3s;
+  --muted-main-color: #e9e6e6;
+  --muted-secondery-color: #fafafa;
+  --main-transition-duration: 0.2s;
+  --main-animation-duration: 2s;
   --section-top-padding: 30px;
   --section-bottom-padding: 30px;
   --section-top-margin: 100px;
@@ -52,8 +53,8 @@ section {
 }
 .main-title::before {
   content: "";
-  width: 10px;
-  height: 10px;
+  width: 14px;
+  height: 14px;
   background-color: var(--main-color);
   border-radius: 50%;
   position: absolute;
@@ -63,8 +64,8 @@ section {
 }
 .main-title::after {
   content: "";
-  width: 10px;
-  height: 10px;
+  width: 14px;
+  height: 14px;
   background-color: var(--main-color);
   border-radius: 50%;
   position: absolute;
@@ -87,25 +88,24 @@ section {
 }
 
 @keyframes fill-title-left {
-  40%,
-  80% {
+  50% {
     left: 0;
-    border-radius: 0;
+    width: 14px;
+    height: 14px;
   }
   100% {
     left: 0;
-    border-radius: 0;
     width: 50%;
     height: 100%;
+    border-radius: 0;
   }
 }
 @keyframes fill-title-right {
-  40%,
-  80% {
+  50% {
     right: 0;
-    border-radius: 0;
+    width: 14px;
+    height: 14px;
   }
-  90%,
   100% {
     right: 0;
     border-radius: 0;
@@ -203,7 +203,7 @@ header .container nav > ul > li > a {
 
 header .container nav > ul > li > a:hover {
   color: var(--main-color);
-  background-color: var(--muted-white-color);
+  background-color: var(--muted-secondery-color);
 }
 
 header .container nav > ul > li > a:after {
@@ -284,7 +284,7 @@ header .container nav > ul > li:last-child:hover .menu {
   color: var(--main-color);
 }
 .menu ul li:not(:last-child) {
-  border-bottom: 1px solid var(--muted-white-color);
+  border-bottom: 1px solid var(--muted-main-color);
 }
 .menu ul li a {
 }
@@ -477,22 +477,16 @@ header .container nav > ul > li:last-child:hover .menu {
   font-weight: bold;
   font-size: 14px;
 }
-.articles .container .box .info a i {
+.articles .container .box:hover .info a i {
   animation-name: to-right;
-  animation-duration: var(--main-animation-duration);
-  animation-timing-function: ease-in-out;
+  animation-duration: calc(var(--main-transition-duration) * 4);
+  animation-timing-function: linear;
+  animation-fill-mode: both;
   animation-iteration-count: infinite;
 }
 @keyframes to-right {
-  0%,
-  50%,
-  70% {
-    transform: translateX(0);
-  }
-  20%,
-  30%,
   100% {
-    transform: translateX(-4px);
+    transform: translateX(10px);
   }
 }
 /* End Articles */
