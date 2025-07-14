@@ -21,7 +21,7 @@ html {
 /* Start Global Rules */
 section {
   padding-top: var(--section-top-padding);
-  padding-bottom: var(--section-bottom-paddin);
+  padding-bottom: var(--section-bottom-padding);
 }
 /* End Global Rules */
 /* Start Componnets */
