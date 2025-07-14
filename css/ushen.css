@@ -10,8 +10,11 @@
   --main-animation-duration: 3s;
   --section-top-padding: 30px;
   --section-bottom-padding: 30px;
-  --section-top-margin: 100px;
-  --section-bottom-margin: 100px;
+  --section-top-margin: 140px;
+  --section-bottom-margin: 140px;
+}
+body {
+  font-family: Cairo;
 }
 html {
   scroll-behavior: smooth;
@@ -19,7 +22,8 @@ html {
 }
 /* End Variables */
 /* Start Global Rules */
-section {
+section,
+.section {
   padding-top: var(--section-top-padding);
   padding-bottom: var(--section-bottom-padding);
 }
@@ -27,8 +31,8 @@ section {
 /* Start Componnets */
 .main-title {
   width: fit-content;
-  margin-bottom: 30px;
   margin-top: 30px;
+  margin-bottom: 90px;
   margin-left: auto;
   margin-right: auto;
   padding: 15px 30px;
@@ -311,6 +315,9 @@ header .container nav > ul > li:last-child:hover .menu {
   position: relative;
   overflow: hidden;
 }
+.menu ul li i {
+  margin-right: 10px;
+}
 
 @media (max-width: 767px) {
   .menu ul li {
@@ -443,7 +450,7 @@ header .container nav > ul > li:last-child:hover .menu {
   left: 50%;
   transform: translateX(-50%);
   bottom: 30px;
-  font-size: 25px;
+  font-size: 18px;
   animation-name: bouncing;
   animation-duration: calc(var(--main-animation-duration) / 1.5);
   animation-timing-function: linear;
@@ -526,9 +533,11 @@ header .container nav > ul > li:last-child:hover .menu {
 .articles .container .box .info {
   padding: 20px;
 }
+
 .articles .container .box .info a {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   color: var(--main-color);
 }
 .articles .container .box .info a p {
@@ -617,3 +626,138 @@ header .container nav > ul > li:last-child:hover .menu {
 }
 /* End Animation */
 /* End Gallery */
+/* Start Features */
+.features .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+.features .container .box {
+  text-align: center;
+  border: 2px solid #ccc;
+  box-shadow: 0 2px 15px 0 rgb(0 0 0 / 30%);
+  min-height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.features .container .box .image {
+  position: relative;
+  overflow: hidden;
+}
+.features .container .box .image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.features .container .box.quality .image::before {
+  background-color: rgb(244 64 54 / 40%);
+}
+.features .container .box.time .image::before {
+  background-color: rgb(0 150 136 / 40%);
+}
+.features .container .box.passion .image::before {
+  background-color: rgb(3 169 244 / 40%);
+}
+
+/* Skew Method:                                    */
+/* ================================================*/
+/* .features .container .box .image::after { */
+/*   content: ""; */
+/*   position: absolute; */
+/*   bottom: 0; */
+/*   left: 0; */
+/*   width: 100%; */
+/*   height: 40%; */
+/*   transform: skewY(-10deg); */
+/*   transform-origin: bottom right; */
+/*   background: white; */
+/* } */
+/* Border Method:                                   */
+/* ================================================*/
+.features .container .box .image::after {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  border-width: 0px 0px 190px 900px;
+  border-color: transparent transparent white transparent;
+  border-style: solid;
+  transition-property: all;
+  transition-duration: var(--main-transition-duration);
+}
+.features .container .box:hover .image::after {
+  border-width: 0px 385px 76px 0px;
+  border-color: transparent transparent white transparent;
+  border-style: solid;
+}
+
+.features .container .box h2,
+.features .container .box p,
+.features .container .box a {
+  display: block;
+  padding: 10px 40px;
+}
+
+.features .container .box h2 {
+  padding: 10px 30px;
+  width: fit-content;
+  margin: 0 auto;
+  position: relative;
+}
+
+.features .container .box h2:after {
+  content: "";
+  position: absolute;
+  left: 30px;
+  bottom: -10px;
+  width: calc(100% - 60px);
+  height: 4px;
+  background: #ccc;
+}
+.features .container .box.quality h2 {
+  color: #f44036;
+}
+.features .container .box.quality h2:after {
+  background-color: #f44036;
+}
+.features .container .box.time h2 {
+  color: #009688;
+}
+.features .container .box.time h2:after {
+  background-color: #009688;
+}
+.features .container .box.passion h2 {
+  color: #03a9f4;
+}
+.features .container .box.passion h2:after {
+  background-color: #03a9f4;
+}
+.features .container .box p {
+  line-height: 1.7;
+  font-size: 18px;
+  color: #666;
+}
+
+.features .container .box a {
+  padding: 10px 30px;
+  margin: 20px auto;
+  border: 2px solid #ccc;
+  width: fit-content;
+  font-size: 24px;
+  font-weight: 800;
+  border-radius: 6px;
+  transition: var(--main-transition-duration);
+  background-image: linear-gradient(to right, yellow 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right top;
+}
+
+.features .container .box:hover a {
+  background-position: left top;
+}
+/* End Features */
