@@ -275,10 +275,12 @@ header .container nav > ul > li:last-child:hover .menu {
 .menu .image img {
   width: 400px;
 }
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .menu .image {
     display: none;
   }
+}
+@media (max-width: 767px) {
   .menu ul {
     flex: 1;
   }
@@ -308,6 +310,7 @@ header .container nav > ul > li:last-child:hover .menu {
   background-color: var(--muted-secondery-color);
 }
 .menu ul li {
+  min-width: 165px;
   width: 100%;
   margin: 10px 20px;
   padding: 10px 20px;
@@ -322,7 +325,6 @@ header .container nav > ul > li:last-child:hover .menu {
 @media (max-width: 767px) {
   .menu ul li {
     width: 100%;
-    text-align: center;
   }
 }
 
@@ -351,8 +353,6 @@ header .container nav > ul > li:last-child:hover .menu {
 }
 .menu ul li:not(:last-child) {
   border-bottom: 2px solid var(--muted-main-color);
-}
-.menu ul li a {
 }
 
 /* End menu */
