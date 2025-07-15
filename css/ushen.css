@@ -687,16 +687,16 @@ header .container nav > ul > li:last-child:hover .menu {
 .features .container .box .image::after {
   content: "";
   position: absolute;
-  bottom: 4px;
-  left: 0;
-  border-width: 0px 0px 350px 900px;
+  bottom: 0px;
+  right: 0;
+  border-width: 0 0 140px 380px;
   border-color: transparent transparent white transparent;
   border-style: solid;
   transition-property: all;
   transition-duration: var(--main-transition-duration);
 }
 .features .container .box:hover .image::after {
-  border-width: 0px 385px 130px 0px;
+  border-width: 0 380px 140px 0;
   border-color: transparent transparent white transparent;
   border-style: solid;
 }
