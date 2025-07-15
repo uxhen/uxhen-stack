@@ -762,20 +762,21 @@ header .container nav > ul > li:last-child:hover .menu {
   background-size: 200% 100%;
   background-position: right center;
 }
-
-.features .container .box:hover a {
-  background-position: left center;
-  color: white;
-}
-
 .features .container .box.quality a {
   border-color: #f44036;
+  color: #f44036;
 }
 .features .container .box.time a {
   border-color: #009688;
+  color: #009688;
 }
 .features .container .box.passion a {
   border-color: #03a9f4;
+  color: #03a9f4;
+}
+.features .container .box:hover a {
+  background-position: left center;
+  color: white;
 }
 
 .features .container .box.quality:hover a {
