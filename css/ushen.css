@@ -746,18 +746,40 @@ header .container nav > ul > li:last-child:hover .menu {
 .features .container .box a {
   padding: 10px 30px;
   margin: 20px auto;
-  border: 2px solid #ccc;
+  border: 4px solid #000;
+  color: #000;
   width: fit-content;
   font-size: 24px;
   font-weight: 800;
   border-radius: 6px;
   transition: var(--main-transition-duration);
-  background-image: linear-gradient(to right, yellow 50%, white 50%);
+  background-repeat: no-repeat;
   background-size: 200% 100%;
-  background-position: right top;
+  background-position: right center;
 }
 
 .features .container .box:hover a {
-  background-position: left top;
+  background-position: left center;
+  color: white;
+}
+
+.features .container .box.quality a {
+  border-color: #f44036;
+}
+.features .container .box.time a {
+  border-color: #009688;
+}
+.features .container .box.passion a {
+  border-color: #03a9f4;
+}
+
+.features .container .box.quality:hover a {
+  background-image: linear-gradient(to right, #f44036 50%, white 50%);
+}
+.features .container .box.time:hover a {
+  background-image: linear-gradient(to right, #009688 50%, white 50%);
+}
+.features .container .box.passion:hover a {
+  background-image: linear-gradient(to right, #03a9f4 50%, white 50%);
 }
 /* End Features */
