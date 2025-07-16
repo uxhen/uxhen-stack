@@ -871,19 +871,35 @@ header .container nav > ul > li:last-child:hover .menu {
 .team .container .box .image img {
   width: 400px;
   border-radius: 6px;
+  position: relative;
+  z-index: 2;
+  transition-property: filter;
+  transition-duration: var(--main-transition-duration);
+}
+
+.team .container .box:hover .image img {
+  filter: grayscale(200);
 }
 .team .container .box .info {
   position: absolute;
-  right: -50px;
-  top: -50px;
-  width: calc(100% - 100px);
-  height: calc(100% + 100px);
+  right: -35px;
+  top: -10px;
+  width: calc(100% - 68px);
+  height: calc(100% + 77px);
   background: var(--section-secodery-background);
   border-radius: 6px;
-  z-index: -1;
   display: flex;
+  overflow: hidden;
+  z-index: 1;
 }
-
+.team .container .box::after {
+  content: "";
+  position: absolute;
+  right: -35px;
+  top: -10px;
+  width: calc(100% - 68px);
+  height: calc(100% + 77px);
+}
 .team .container .box .info .icons {
   position: absolute;
   right: 25px;
@@ -893,9 +909,28 @@ header .container nav > ul > li:last-child:hover .menu {
   flex-direction: column;
   gap: 10px;
 }
+.team .container .box .info::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: var(--main-transition-duration);
+  width: 0;
+  height: 100%;
+  background: #d1d1d1;
+  z-index: -1;
+}
+
+.team .container .box:hover .info::after {
+  width: 100%;
+}
 .team .container .box .info .icons li a i {
   color: #777;
   font-size: 20px;
+}
+
+.team .container .box .info .icons li a i:hover {
+  color: var(--main-color);
 }
 .team .container .box .info .meta-data {
   margin-top: auto;
