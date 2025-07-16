@@ -144,7 +144,7 @@ section,
 
 /* Start header */
 header {
-  box-shadow: 0 0px 10px #ddd;
+  box-shadow: 0 0px 15px #ddd;
 }
 header .container {
   display: flex;
@@ -381,6 +381,11 @@ header .container nav > ul > li:last-child:hover .menu {
   transform: skewY(-8deg);
   transform-origin: top left;
 }
+@media (max-width: 767px) {
+  .landing::after {
+    top: -80px;
+  }
+}
 .landing .container {
   display: flex;
   justify-content: space-between;
@@ -462,6 +467,12 @@ header .container nav > ul > li:last-child:hover .menu {
   animation-timing-function: linear;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
+}
+@media (max-width: 767px) {
+  .landing .down-arrow {
+    bottom: 80px;
+    font-size: 10px;
+  }
 }
 
 .landing .down-arrow i {
