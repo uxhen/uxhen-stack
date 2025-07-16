@@ -858,93 +858,193 @@ header .container nav > ul > li:last-child:hover .menu {
   line-height: 1.7;
 }
 /* End Testimonails */
+
+/*╭──────────────────────────────────────────────────────────────────────╮      */
+/*│Main Method:   ==>                                                    │      */
+/*╰──────────────────────────────────────────────────────────────────────╯      */
 /* Start Team-Members */
+/* .team .container { */
+/*   display: grid; */
+/*   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+/*   gap: 120px; */
+/* } */
+/* .team .container .box { */
+/*   position: relative; */
+/*   padding: 20px; */
+/* } */
+/* .team .container .box .image img { */
+/*   width: 400px; */
+/*   border-radius: 6px; */
+/*   position: relative; */
+/*   z-index: 2; */
+/*   transition-property: filter; */
+/*   transition-duration: var(--main-transition-duration); */
+/* } */
+/**/
+/* .team .container .box:hover .image img { */
+/*   filter: grayscale(200); */
+/* } */
+/* .team .container .box .info { */
+/*   position: absolute; */
+/*   right: -35px; */
+/*   top: -10px; */
+/*   width: calc(100% - 68px); */
+/*   height: calc(100% + 77px); */
+/*   background: var(--section-secodery-background); */
+/*   border-radius: 6px; */
+/*   display: flex; */
+/*   overflow: hidden; */
+/*   z-index: 1; */
+/* } */
+/* .team .container .box::after { */
+/*   content: ""; */
+/*   position: absolute; */
+/*   right: -35px; */
+/*   top: -10px; */
+/*   width: calc(100% - 68px); */
+/*   height: calc(100% + 77px); */
+/* } */
+/* .team .container .box .info .icons { */
+/*   position: absolute; */
+/*   right: 25px; */
+/*   top: 50%; */
+/*   transform: translate(15%, -50%); */
+/*   display: flex; */
+/*   flex-direction: column; */
+/*   gap: 10px; */
+/* } */
+/* .team .container .box .info::after { */
+/*   content: ""; */
+/*   position: absolute; */
+/*   right: 0; */
+/*   top: 0; */
+/*   transition: var(--main-transition-duration); */
+/*   width: 0; */
+/*   height: 100%; */
+/*   background: #d1d1d1; */
+/*   z-index: -1; */
+/* } */
+/**/
+/* .team .container .box:hover .info::after { */
+/*   width: 100%; */
+/* } */
+/* .team .container .box .info .icons li a i { */
+/*   color: #777; */
+/*   font-size: 20px; */
+/* } */
+/**/
+/* .team .container .box .info .icons li a i:hover { */
+/*   color: var(--main-color); */
+/* } */
+/* .team .container .box .info .meta-data { */
+/*   margin-top: auto; */
+/*   padding: 20px; */
+/* } */
+/**/
+/* .team .container .box .info .meta-data .name { */
+/*   color: var(--main-color); */
+/*   font-size: 20px; */
+/*   font-weight: 800; */
+/*   margin-bottom: 4px; */
+/* } */
+/**/
+/* .team .container .box .info .meta-data .title { */
+/*   color: #777; */
+/* } */
+/*╭──────────────────────────────────────────────────────────────────────╮      */
+/*│Elzero Method:                                                        │      */
+/*╰──────────────────────────────────────────────────────────────────────╯      */
 .team .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 120px;
+  column-gap: 40px;
+  row-gap: 80px;
 }
 .team .container .box {
+  padding-top: 60px;
   position: relative;
-  padding: 20px;
 }
-.team .container .box .image img {
-  width: 400px;
-  border-radius: 6px;
-  position: relative;
-  z-index: 2;
-  transition-property: filter;
-  transition-duration: var(--main-transition-duration);
-}
-
-.team .container .box:hover .image img {
-  filter: grayscale(200);
-}
-.team .container .box .info {
+.team .container .box::before {
+  content: "";
   position: absolute;
-  right: -35px;
-  top: -10px;
-  width: calc(100% - 68px);
-  height: calc(100% + 77px);
+  top: 0;
+  right: 0;
+  width: calc(100% - 60px);
+  height: calc(100% + 60px);
   background: var(--section-secodery-background);
-  border-radius: 6px;
-  display: flex;
-  overflow: hidden;
-  z-index: 1;
+  z-index: -2;
 }
 .team .container .box::after {
   content: "";
   position: absolute;
-  right: -35px;
-  top: -10px;
-  width: calc(100% - 68px);
-  height: calc(100% + 77px);
-}
-.team .container .box .info .icons {
-  position: absolute;
-  right: 25px;
-  top: 50%;
-  transform: translate(15%, -50%);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.team .container .box .info::after {
-  content: "";
-  position: absolute;
-  right: 0;
   top: 0;
-  transition: var(--main-transition-duration);
+  right: 0;
   width: 0;
-  height: 100%;
+  height: calc(100% + 60px);
   background: #d1d1d1;
   z-index: -1;
+  transition: var(--main-transition-duration);
 }
 
-.team .container .box:hover .info::after {
+.team .container .box:hover::after {
+  width: calc(100% - 60px);
+}
+.team .container .box .content {
+  display: flex;
+  align-items: center;
+}
+
+.team .container .box .content img {
+  width: calc(100% - 60px);
+  transition: var(--main-transition-duration);
+}
+.team .container .box:hover img {
+  filter: grayscale(100%);
+}
+
+.team .container .box .content .icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 60px;
+  gap: 20px;
+}
+
+.team .container .box .content .icons li {
+  flex-grow: 1;
+}
+.team .container .box .content .icons li a {
+  display: block;
+  width: 60px;
+}
+.team .container .box .content .icons li a i {
   width: 100%;
-}
-.team .container .box .info .icons li a i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
   color: #777;
-  font-size: 20px;
+  transition: var(--main-transition-duration);
 }
 
-.team .container .box .info .icons li a i:hover {
+.team .container .box .content .icons li a:hover i {
   color: var(--main-color);
 }
-.team .container .box .info .meta-data {
-  margin-top: auto;
-  padding: 20px;
+.team .container .box .info {
+  padding-left: calc(60px + 10px);
 }
-
-.team .container .box .info .meta-data .name {
-  color: var(--main-color);
-  font-size: 20px;
+.team .container .box .info .name {
   font-weight: 800;
-  margin-bottom: 4px;
+  padding: 20px 0 10px;
+  font-size: 24px;
+  color: var(--main-color);
 }
 
-.team .container .box .info .meta-data .title {
+.team .container .box .info .title {
+  font-size: 14px;
+  margin-bottom: -20px;
+  font-weight: 800;
   color: #777;
 }
 /* End Team-Members */
