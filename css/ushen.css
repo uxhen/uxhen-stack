@@ -8,17 +8,13 @@
   --muted-secondery-color: #fafafa;
   --main-transition-duration: 0.3s;
   --main-animation-duration: 3s;
-  --section-top-padding: 30px;
-  --section-bottom-padding: 30px;
+  --section-top-padding: 100px;
+  --section-bottom-padding: 100px;
   --section-top-margin: 140px;
   --section-bottom-margin: 140px;
 }
 body {
   font-family: Cairo;
-}
-html {
-  scroll-behavior: smooth;
-  -webkit-scroll-behavior: smooth;
 }
 /* End Variables */
 /* Start Global Rules */
@@ -513,10 +509,6 @@ header .container nav > ul > li:last-child:hover .menu {
 /* End Animation */
 /* End Landing */
 /* Start Articles */
-.articles {
-  margin-top: var(--section-top-margin);
-  margin-bottom: var(--section-bottom-margin);
-}
 .articles .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -861,9 +853,63 @@ header .container nav > ul > li:last-child:hover .menu {
 .testimonails .container .box .rate li i.full {
   color: #ffc107;
 }
-
 .testimonails .container .box .description {
   color: #777;
   line-height: 1.7;
 }
-/* end Testimonails */
+/* End Testimonails */
+/* Start Team-Members */
+.team .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 120px;
+}
+.team .container .box {
+  position: relative;
+  padding: 20px;
+}
+.team .container .box .image img {
+  width: 400px;
+  border-radius: 6px;
+}
+.team .container .box .info {
+  position: absolute;
+  right: -50px;
+  top: -50px;
+  width: calc(100% - 100px);
+  height: calc(100% + 100px);
+  background: var(--section-secodery-background);
+  border-radius: 6px;
+  z-index: -1;
+  display: flex;
+}
+
+.team .container .box .info .icons {
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translate(15%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.team .container .box .info .icons li a i {
+  color: #777;
+  font-size: 20px;
+}
+.team .container .box .info .meta-data {
+  margin-top: auto;
+  padding: 20px;
+}
+
+.team .container .box .info .meta-data .name {
+  color: var(--main-color);
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.team .container .box .info .meta-data .title {
+  color: #777;
+}
+/* End Team-Members */
