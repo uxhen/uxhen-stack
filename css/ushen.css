@@ -969,6 +969,7 @@ header .container nav > ul > li:last-child:hover .menu {
   position: absolute;
   top: 0;
   right: 0;
+  border-radius: 6px;
   width: calc(100% - 60px);
   height: calc(100% + 60px);
   background: var(--section-secodery-background);
@@ -980,6 +981,7 @@ header .container nav > ul > li:last-child:hover .menu {
   top: 0;
   right: 0;
   width: 0;
+  border-radius: 6px;
   height: calc(100% + 60px);
   background: #d1d1d1;
   z-index: -1;
@@ -996,6 +998,7 @@ header .container nav > ul > li:last-child:hover .menu {
 
 .team .container .box .content img {
   width: calc(100% - 60px);
+  border-radius: 6px;
   transition: var(--main-transition-duration);
 }
 .team .container .box:hover img {
