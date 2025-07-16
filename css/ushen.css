@@ -251,6 +251,7 @@ header .container nav > ul > li > a.active-link:after {
   padding: 40px;
   border-radius: 4px;
   transition: var(--main-transition-duration);
+  overflow: hidden;
   z-index: 0;
 }
 
@@ -310,13 +311,18 @@ header .container nav > ul > li:last-child:hover .menu {
   background-color: var(--muted-secondery-color);
 }
 .menu ul li {
-  min-width: 165px;
+  min-width: 140px;
   width: 100%;
   margin: 10px 20px;
   padding: 10px 20px;
   text-align: left;
   position: relative;
   overflow: hidden;
+}
+@media (max-width: 991px) {
+  .menu ul li {
+    min-width: 140px;
+  }
 }
 .menu ul li i {
   margin-right: 10px;
@@ -790,7 +796,6 @@ header .container nav > ul > li:last-child:hover .menu {
 }
 /* End Features */
 /* Start Testimonails */
-/* end Testimonails */
 .testimonails {
   background-color: var(--section-secodery-background);
 }
@@ -813,9 +818,8 @@ header .container nav > ul > li:last-child:hover .menu {
   width: 100px;
   border-radius: 50%;
   border: 15px solid var(--section-secodery-background);
-  top: -30px;
+  top: -40px;
   right: -30px;
-  display: none;
 }
 .testimonails .container .box .name {
   font-size: 20px;
@@ -837,3 +841,4 @@ header .container nav > ul > li:last-child:hover .menu {
   color: #777;
   line-height: 1.7;
 }
+/* end Testimonails */
