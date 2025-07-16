@@ -816,6 +816,11 @@ header .container nav > ul > li:last-child:hover .menu {
   column-gap: 40px;
   row-gap: 20px;
 }
+@media (max-width: 767px) {
+  .testimonails .container {
+    row-gap: 50px;
+  }
+}
 .testimonails .container .box {
   background: white;
   padding: 20px;
@@ -831,6 +836,15 @@ header .container nav > ul > li:last-child:hover .menu {
   border: 15px solid var(--section-secodery-background);
   top: -40px;
   right: -30px;
+}
+
+@media (max-width: 767px) {
+  .testimonails .container .box img {
+    width: 80px;
+    bottom: 0;
+    border-width: 5px;
+    right: -10px;
+  }
 }
 .testimonails .container .box .name {
   font-size: 20px;
