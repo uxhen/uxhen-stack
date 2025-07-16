@@ -564,7 +564,7 @@ header .container nav > ul > li:last-child:hover .menu {
 }
 .gallery .container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   column-gap: 20px;
   row-gap: 40px;
 }
@@ -789,3 +789,51 @@ header .container nav > ul > li:last-child:hover .menu {
   background-image: linear-gradient(to right, #03a9f4 50%, white 50%);
 }
 /* End Features */
+/* Start Testimonails */
+/* end Testimonails */
+.testimonails {
+  background-color: var(--section-secodery-background);
+}
+.testimonails .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  column-gap: 40px;
+  row-gap: 20px;
+}
+.testimonails .container .box {
+  background: white;
+  padding: 20px;
+  position: relative;
+  border-radius: 6px;
+  box-shadow: 0 0px 15px 0px rgb(0 0 0 / 30%);
+}
+
+.testimonails .container .box img {
+  position: absolute;
+  width: 100px;
+  border-radius: 50%;
+  border: 15px solid var(--section-secodery-background);
+  top: -30px;
+  right: -30px;
+  display: none;
+}
+.testimonails .container .box .name {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+.testimonails .container .box .title {
+  color: #777;
+}
+.testimonails .container .box .rate {
+  display: flex;
+  margin: 8px 0;
+  gap: 8px;
+}
+.testimonails .container .box .rate li i.full {
+  color: #ffc107;
+}
+
+.testimonails .container .box .description {
+  color: #777;
+  line-height: 1.7;
+}
