@@ -1077,7 +1077,7 @@ header .container nav > ul > li:last-child:hover .menu {
   flex-direction: column;
   overflow: hidden;
   border-radius: 6px;
-  box-shadow: 0 0 15px 0 rgb(0 0 0 / 30%);
+  box-shadow: 0 0 8px 0 rgb(0 0 0 / 30%);
   position: relative;
 }
 .services .container .serv-box:after {
@@ -1109,7 +1109,7 @@ header .container nav > ul > li:last-child:hover .menu {
 }
 .services .container .serv-box .body .title {
   font-size: 30px;
-  font-weight: bold;
+  font-weight: 800;
   color: var(--main-color);
 }
 .services .container .serv-box .footer {
@@ -1141,7 +1141,7 @@ header .container nav > ul > li:last-child:hover .menu {
   z-index: -1;
 }
 .services .container .serv-box .footer .number::after {
-  left: 40px;
+  left: 60px;
   background-color: #dadada;
   z-index: -2;
 }
