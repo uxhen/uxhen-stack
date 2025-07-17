@@ -1,4 +1,4 @@
-@import url("reset.css");
+@import url("normalize.css");
 /* Start Variables */
 :root {
   --main-color: #2196f3;
@@ -7,17 +7,35 @@
   --muted-main-color: #e9e6e6;
   --muted-secondery-color: #fafafa;
   --main-transition-duration: 0.3s;
-  --main-animation-duration: 3s;
+  --main-animation-duration: 2s;
   --section-top-padding: 100px;
   --section-bottom-padding: 100px;
   --section-top-margin: 140px;
   --section-bottom-margin: 140px;
 }
+/* End Variables */
+/* Start Global Rules */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+img,
+video {
+  max-width: 100%;
+}
 body {
   font-family: Cairo;
 }
-/* End Variables */
-/* Start Global Rules */
 section,
 .section {
   padding-top: var(--section-top-padding);
@@ -459,7 +477,7 @@ header .container nav > ul > li:last-child:hover .menu {
   bottom: 30px;
   font-size: 18px;
   animation-name: bouncing;
-  animation-duration: calc(var(--main-animation-duration) / 1.5);
+  animation-duration: calc(var(--main-animation-duration));
   animation-timing-function: linear;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
@@ -709,7 +727,6 @@ header .container nav > ul > li:last-child:hover .menu {
   border-color: transparent transparent white transparent;
   border-style: solid;
 }
-
 .features .container .box h2,
 .features .container .box p,
 .features .container .box a {
@@ -723,7 +740,6 @@ header .container nav > ul > li:last-child:hover .menu {
   margin: 0 auto;
   position: relative;
 }
-
 .features .container .box h2:after {
   content: "";
   position: absolute;
@@ -787,7 +803,6 @@ header .container nav > ul > li:last-child:hover .menu {
   background-position: left center;
   color: white;
 }
-
 .features .container .box.quality:hover a {
   background-image: linear-gradient(to right, #f44036 50%, white 50%);
 }
@@ -805,12 +820,11 @@ header .container nav > ul > li:last-child:hover .menu {
 .testimonails .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  column-gap: 40px;
-  row-gap: 20px;
+  gap: 40px;
 }
 @media (max-width: 767px) {
   .testimonails .container {
-    row-gap: 50px;
+    row-gap: 30px;
   }
 }
 .testimonails .container .box {
@@ -820,16 +834,14 @@ header .container nav > ul > li:last-child:hover .menu {
   border-radius: 6px;
   box-shadow: 0 0px 15px 0px rgb(0 0 0 / 30%);
 }
-
 .testimonails .container .box img {
   position: absolute;
-  width: 100px;
+  width: 80px;
   border-radius: 50%;
-  border: 15px solid var(--section-secodery-background);
-  top: -40px;
+  border: 10px solid var(--section-secodery-background);
+  top: -25px;
   right: -30px;
 }
-
 @media (max-width: 767px) {
   .testimonails .container .box img {
     width: 80px;
@@ -987,7 +999,6 @@ header .container nav > ul > li:last-child:hover .menu {
   z-index: -1;
   transition: var(--main-transition-duration);
 }
-
 .team .container .box:hover::after {
   width: calc(100% - 60px);
 }
@@ -995,7 +1006,6 @@ header .container nav > ul > li:last-child:hover .menu {
   display: flex;
   align-items: center;
 }
-
 .team .container .box .content img {
   width: calc(100% - 60px);
   border-radius: 6px;
@@ -1004,8 +1014,8 @@ header .container nav > ul > li:last-child:hover .menu {
 .team .container .box:hover img {
   filter: grayscale(100%);
 }
-
 .team .container .box .content .icons {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1013,13 +1023,11 @@ header .container nav > ul > li:last-child:hover .menu {
   max-width: 60px;
   gap: 20px;
 }
-
 .team .container .box .content .icons li {
   flex-grow: 1;
 }
 .team .container .box .content .icons li a {
   display: block;
-  width: 60px;
 }
 .team .container .box .content .icons li a i {
   width: 100%;
@@ -1030,7 +1038,6 @@ header .container nav > ul > li:last-child:hover .menu {
   color: #777;
   transition: var(--main-transition-duration);
 }
-
 .team .container .box .content .icons li a:hover i {
   color: var(--main-color);
 }
@@ -1043,11 +1050,104 @@ header .container nav > ul > li:last-child:hover .menu {
   font-size: 24px;
   color: var(--main-color);
 }
-
+.team .container .box:hover .info .name {
+  color: #777;
+}
 .team .container .box .info .title {
   font-size: 14px;
   margin-bottom: -20px;
   font-weight: 800;
   color: #777;
+  margin-bottom: -30px;
 }
 /* End Team-Members */
+/* Start Services */
+.services {
+  background: var(--section-secodery-background);
+}
+.services .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+.services .container .serv-box {
+  background: white;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: 0 0 15px 0 rgb(0 0 0 / 30%);
+  position: relative;
+}
+.services .container .serv-box:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0px;
+  height: 4px;
+  background-color: var(--main-color);
+  transition: width var(--main-transition-duration);
+}
+.services .container .serv-box:hover:after {
+  width: 100%;
+}
+.services .container .serv-box .body {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.services .container .serv-box .body .icon i {
+  font-size: 80px;
+  color: var(--section-secodery-background);
+}
+.services .container .serv-box .body .title {
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--main-color);
+}
+.services .container .serv-box .footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.services .container .serv-box .footer .number {
+  padding: 10px 40px;
+  color: white;
+  font-size: 20px;
+  font-weight: 800;
+  position: relative;
+  left: -10px;
+  z-index: 1;
+}
+.services .container .serv-box .footer .number::before,
+.services .container .serv-box .footer .number::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-color);
+  transform: skewX(-30deg);
+  transform-origin: left top;
+  z-index: -1;
+}
+.services .container .serv-box .footer .number::after {
+  left: 40px;
+  background-color: #dadada;
+  z-index: -2;
+}
+.services .container .serv-box .footer .details {
+  padding: 10px 20px;
+  font-weight: 800;
+  color: var(--main-color);
+}
+/* End Services */
