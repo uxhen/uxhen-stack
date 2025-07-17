@@ -1267,3 +1267,47 @@ header .container nav > ul > li:last-child:hover .menu {
   padding: 10px;
 }
 /* End Services */
+/* Start Our-Skills */
+.our-skills .container {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+.our-skills .container img {
+  max-width: 600px;
+}
+.our-skills .container .skills {
+  flex: 1;
+}
+.our-skills .container .skills .skill {
+  margin: 30px 0;
+}
+.our-skills .container .skills .skill .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+.our-skills .container .skills .skill .title span {
+  font-size: 12px;
+  padding: 2px 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+}
+
+.our-skills .container .skills .skill .progress-holder {
+  margin-top: 10px;
+  width: 100%;
+  height: 40px;
+  background-color: var(--section-secodery-background);
+  position: relative;
+}
+.our-skills .container .skills .skill .progress-holder span {
+  position: absolute;
+  background: var(--main-color);
+  height: 100%;
+}
+/* End Our-Skills */
