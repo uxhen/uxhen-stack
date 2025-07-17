@@ -1077,8 +1077,14 @@ header .container nav > ul > li:last-child:hover .menu {
   flex-direction: column;
   overflow: hidden;
   border-radius: 6px;
-  box-shadow: 0 0 8px 0 rgb(0 0 0 / 30%);
+  box-shadow: 0 0 15px 0 rgb(0 0 0 / 30%);
   position: relative;
+  transition: top var(--main-transition-duration);
+  top: 0;
+}
+
+.services .container .serv-box:hover {
+  top: -15px;
 }
 .services .container .serv-box:after {
   content: "";
