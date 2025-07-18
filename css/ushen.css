@@ -1344,19 +1344,13 @@ header .container nav > ul > li:last-child:hover .menu {
 }
 .work-steps .container {
   display: flex;
-  align-items: center;
+  align-items: cen--main-animation-durationter;
   justify-content: flex-start;
   gap: 60px;
 }
 @media (max-width: 991px) {
   .work-steps .container {
-    gap: 0;
-  }
-}
-
-@media (max-width: 991px) {
-  .work-steps .container .image img {
-    display: none;
+    flex-direction: column;
   }
 }
 
@@ -1383,6 +1377,8 @@ header .container nav > ul > li:last-child:hover .menu {
 }
 @media (max-width: 767px) {
   .work-steps .container .works .work {
+    text-align: center;
+    flex-direction: column;
     padding: 20px;
   }
 }
@@ -1396,7 +1392,7 @@ header .container nav > ul > li:last-child:hover .menu {
   width: 0;
   height: 0;
   background-color: #efefef;
-  transition: calc(var(--main-transition-duration) * 2);
+  transition: calc(var(--main-transition-duration) * 4);
   z-index: -1;
 }
 
@@ -1411,7 +1407,7 @@ header .container nav > ul > li:last-child:hover .menu {
 }
 @media (max-width: 767px) {
   .work-steps .container .works .work img {
-    width: 30px;
+    width: 50px;
   }
 }
 .work-steps .container .works .work .work-info .title {
@@ -1421,7 +1417,7 @@ header .container nav > ul > li:last-child:hover .menu {
 .work-steps .container .works .work .work-info .description {
   color: #777;
   font-size: 20px;
-  line-height: 1.5;
+  line-height: 1.7;
 }
 
 @media (max-width: 767px) {
@@ -1432,3 +1428,153 @@ header .container nav > ul > li:last-child:hover .menu {
     font-size: 14px;
   }
 }
+/* End Work-Steps  */
+/* Start Events */
+.events {
+  position: relative;
+}
+.events::before,
+.events::after {
+  content: "";
+  position: absolute;
+  background-image: url("../imgs/dots.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 200px;
+  height: 200px;
+}
+.events::before {
+  left: 0;
+  bottom: 10%;
+}
+.events::after {
+  right: 0;
+  top: 10%;
+}
+@media (max-width: 767px) {
+  .events::before,
+  .events::after {
+    all: unset;
+  }
+}
+.events .container .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+.events .container .content img {
+  width: 350px;
+}
+@media (max-width: 991px) {
+  .events .container .content img {
+    display: none;
+  }
+}
+.events .container .content .time {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.events .container .content .time .unit {
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  border: 1px solid #d4d4d4;
+  width: 73px;
+  text-align: center;
+  transition: var(--main-transition-duration);
+}
+.events .container .content .time .unit:hover,
+.events .container .content .time .unit:hover .unit-desc {
+  border-color: var(--main-color);
+}
+.events .container .content .time .unit .unit-time {
+  color: var(--main-color);
+  font-size: 28px;
+  font-weight: bold;
+  padding: 15px;
+}
+.events .container .content .time .unit .unit-desc {
+  padding: 10px;
+  border-top: 1px solid #d4d4d4;
+  text-align: center;
+  transition: var(--main-transition-duration);
+  color: #777;
+}
+.events .container .content .info {
+  margin-top: 40px;
+  text-align: center;
+}
+.events .container .content .info h3 {
+  font-size: 30px;
+  padding: 25px;
+}
+.events .container .content .info p {
+  color: #777;
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+.event-form {
+  margin-top: 100px;
+}
+.event-form form {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 6px;
+  background-color: var(--section-secodery-background);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+@media (max-width: 767px) {
+  .event-form form {
+    flex-direction: column;
+  }
+}
+
+.event-form form input[type="email"],
+.event-form form button {
+  flex: 1;
+  border-radius: 6px;
+  border: none;
+  padding: 20px 25px;
+  caret-color: var(--main-color);
+}
+.event-form form input[type="email"] {
+  padding-left: 10px;
+}
+
+.event-form form input[type="email"]::placeholder {
+  transition-property: opacity;
+  transition-duration: var(--main-transition-duration);
+}
+.event-form form input[type="email"]:focus::placeholder {
+  opacity: 0;
+}
+
+@media (max-width: 767px) {
+  .event-form form input[type="email"],
+  .event-form form button {
+    width: 100%;
+  }
+}
+.event-form form input[type="email"]:focus {
+  outline: none;
+}
+.event-form form button {
+  flex: 0;
+  background: var(--main-color);
+  color: white;
+  font-weight: bold;
+  padding: 20px 25px;
+  transition: var(--main-transition-duration);
+}
+.event-form form button:hover {
+  background-color: var(--main-color-alt);
+}
+/* End Events */
