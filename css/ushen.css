@@ -1683,8 +1683,16 @@ header .container nav > ul > li:last-child:hover .menu {
 
 .pricings .container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 40px;
+}
+@media (max-width: 767px) {
+  .pricings .container {
+    display: block;
+  }
+  .pricings .container .box {
+    margin-bottom: 15px;
+  }
 }
 .pricings .container .box {
   background-color: white;
@@ -1722,6 +1730,27 @@ header .container nav > ul > li:last-child:hover .menu {
   .pricings .container .box.popular {
     top: -30px;
   }
+}
+
+.pricings .container .box.popular > span {
+  position: absolute;
+  top: -1px;
+  right: 20px;
+  writing-mode: vertical-rl;
+  display: block;
+  padding: 30px 10px 50px;
+  background-color: var(--main-color);
+  font-weight: 700;
+  color: white;
+}
+.pricings .container .box.popular > span::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-width: 20px;
+  border-style: solid;
+  border-color: transparent transparent white transparent;
 }
 .pricings .container .box h3 {
   font-size: 30px;
