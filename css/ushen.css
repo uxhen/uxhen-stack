@@ -1856,6 +1856,11 @@ header .container nav > ul > li:last-child:hover .menu {
   min-height: 700px;
   flex: 1;
 }
+@media (max-width: 767px) {
+  .top-videos .container .videos-container .videos-info {
+    min-height: 400px;
+  }
+}
 .top-videos .container .videos-container .videos-info h3.videos-title {
   display: flex;
   justify-content: space-between;
