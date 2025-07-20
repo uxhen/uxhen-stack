@@ -2031,6 +2031,7 @@ header .container nav > ul > li:last-child:hover .menu {
   flex-grow: 1;
 }
 .discount .discount-info {
+  flex-shrink: 4;
   position: relative;
   text-align: center;
   background-color: rgb(33 150 243 / 90%);
@@ -2055,16 +2056,24 @@ header .container nav > ul > li:last-child:hover .menu {
 }
 .discount .discount-info .discount-info-title,
 .discount .discount-form .discount-form-title {
+  font-size: 38px;
   margin-top: 60px;
+  letter-spacing: -1px;
   font-weight: bolder;
   text-align: center;
+}
+@media (max-width: 767px) {
+  .discount .discount-info .discount-info-title,
+  .discount .discount-form .discount-form-title {
+    font-size: 24px;
+  }
 }
 .discount .discount-info p {
   max-width: 600px;
   text-align: center;
-  line-height: 2;
-  font-size: 14px;
-  margin: 20px auto;
+  line-height: 1.7;
+  font-size: 16px;
+  margin: 44px auto;
 }
 .discount .discount-form form {
   display: flex;
@@ -2086,11 +2095,22 @@ header .container nav > ul > li:last-child:hover .menu {
   border: none;
   background: #fff6f6;
   border-bottom: 2px solid #ddd;
+  caret-color: var(--main-color);
 }
 
 .discount .discount-form form input:focus,
 .discount .discount-form form textarea:focus {
   outline: none;
+}
+
+.discount .discount-form form input::placeholder,
+.discount .discount-form form textarea::placeholder {
+  transition: var(--main-transition-duration);
+}
+
+.discount .discount-form form input:focus::placeholder,
+.discount .discount-form form textarea:focus::placeholder {
+  opacity: 0;
 }
 .discount .discount-form form textarea {
   resize: none;
