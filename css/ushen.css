@@ -1319,7 +1319,7 @@ header .container nav > ul > li:last-child:hover .menu {
 }
 .work-steps .container {
   display: flex;
-  align-items: cen--main-animation-durationter;
+  align-items: center;
   justify-content: flex-start;
   gap: 60px;
 }
@@ -1451,7 +1451,7 @@ header .container nav > ul > li:last-child:hover .menu {
   flex-direction: column;
   border-radius: 6px;
   border: 1px solid #d4d4d4;
-  width: 73px;
+  width: 80px;
   text-align: center;
   transition: var(--main-transition-duration);
 }
@@ -1679,6 +1679,32 @@ header .container nav > ul > li:last-child:hover .menu {
 /*╰──────────────────────────────────────────────────────────────────────╯      */
 .pricings {
   background-color: var(--section-secodery-background);
+  position: relative;
+}
+
+.pricings::before,
+.pricings::after {
+  content: "";
+  position: absolute;
+  background-image: url("../imgs/dots.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 200px;
+  height: 200px;
+}
+.pricings::before {
+  left: 0;
+  bottom: 10%;
+}
+.pricings::after {
+  right: 0;
+  top: 10%;
+}
+@media (max-width: 767px) {
+  .pricings::before,
+  .pricings::after {
+    all: unset;
+  }
 }
 
 .pricings .container {
@@ -1763,15 +1789,17 @@ header .container nav > ul > li:last-child:hover .menu {
 }
 .pricings .container .box .price span {
   display: block;
+  width: fit-content;
+  margin: 10px auto;
 }
 .pricings .container .box .price span:first-child {
   font-size: 40px;
   font-weight: 900;
   color: var(--main-color);
-  padding: 20px 20px 10px;
 }
 .pricings .container .box .price span:last-child {
-  margin: 10px 0;
+  font-size: 15px;
+  padding-left: 5px;
   color: #777;
 }
 .pricings .container .box ul.features {
