@@ -2021,3 +2021,103 @@ header .container nav > ul > li:last-child:hover .menu {
   color: var(--main-color);
 }
 /* End Stats */
+/* Start Discount */
+.discount {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.discount > div {
+  flex-grow: 1;
+}
+.discount .discount-info {
+  position: relative;
+  text-align: center;
+  background-color: rgb(33 150 243 / 90%);
+  color: white;
+}
+
+.discount .discount-info::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../imgs/discount-background1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation-name: change-background;
+  animation-duration: calc(var(--main-animation-duration) * 4);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  z-index: -1;
+}
+.discount .discount-info .discount-info-title,
+.discount .discount-form .discount-form-title {
+  margin-top: 60px;
+  font-weight: bolder;
+  text-align: center;
+}
+.discount .discount-info p {
+  max-width: 600px;
+  text-align: center;
+  line-height: 2;
+  font-size: 14px;
+  margin: 20px auto;
+}
+.discount .discount-form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 44px 80px;
+}
+@media (max-width: 767px) {
+  .discount .discount-form form {
+    padding: 44px 20px;
+  }
+}
+.discount .discount-form form input,
+.discount .discount-form form textarea {
+  width: 100%;
+  padding: 20px;
+  border: none;
+  background: #fff6f6;
+  border-bottom: 2px solid #ddd;
+}
+
+.discount .discount-form form input:focus,
+.discount .discount-form form textarea:focus {
+  outline: none;
+}
+.discount .discount-form form textarea {
+  resize: none;
+  height: 250px;
+}
+.discount .discount-form form button {
+  width: 100%;
+  padding: 15px 35px;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  font-weight: bold;
+  background: var(--main-color);
+}
+
+.discount .discount-form form button:hover {
+  background: var(--main-color-alt);
+}
+/* Start Animation */
+@keyframes change-background {
+  0%,
+  100% {
+    background-image: url(../imgs/discount-background1.jpg);
+  }
+  50% {
+    background-image: url(../imgs/discount-background2.jpg);
+  }
+}
+/* End Animation */
+/* End Discount */
