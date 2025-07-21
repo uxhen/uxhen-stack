@@ -1865,6 +1865,7 @@ header .container nav > ul > li:last-child:hover .menu {
   display: flex;
   justify-content: space-between;
   padding: 15px;
+  color: var(--main-color);
 }
 .top-videos .container .videos-container .videos-info ul.videos-list {
   flex-grow: 1;
@@ -2018,14 +2019,17 @@ header .container nav > ul > li:last-child:hover .menu {
 }
 .stats .container .box .title {
   font-size: 20px;
+  font-style: italic;
   color: var(--main-color);
 }
 /* End Stats */
 /* Start Discount */
 .discount {
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
+  min-height: 100vh;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 .discount > div {
   flex-grow: 1;
@@ -2094,13 +2098,16 @@ header .container nav > ul > li:last-child:hover .menu {
   padding: 20px;
   border: none;
   background: #fff6f6;
-  border-bottom: 2px solid #ddd;
+  border-bottom: 4px solid #ddd;
+  transition: var(--main-transition-duration);
   caret-color: var(--main-color);
+  border-radius: 6px;
 }
 
 .discount .discount-form form input:focus,
 .discount .discount-form form textarea:focus {
   outline: none;
+  border-color: var(--main-color);
 }
 
 .discount .discount-form form input::placeholder,
@@ -2117,8 +2124,9 @@ header .container nav > ul > li:last-child:hover .menu {
   height: 250px;
 }
 .discount .discount-form form button {
+  margin-top: 40px;
   width: 100%;
-  padding: 15px 35px;
+  padding: 25px 35px;
   color: white;
   border-radius: 6px;
   border: none;
