@@ -704,6 +704,14 @@ header .container nav > ul > li:last-child:hover .menu {
   border-color: transparent transparent white transparent;
   border-style: solid;
 }
+@media (min-width: 430px) and (max-width: 684px) {
+  .features .container .box .image::after {
+    border-width: 0 0 140px 600px;
+  }
+  .features .container .box:hover .image::after {
+    border-width: 0 640px 140px 0;
+  }
+}
 .features .container .box h2,
 .features .container .box p,
 .features .container .box a {
