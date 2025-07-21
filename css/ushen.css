@@ -1435,6 +1435,7 @@ header .container nav > ul > li:last-child:hover .menu {
   background-size: cover;
   width: 200px;
   height: 200px;
+  z-index: -1;
 }
 .events::before {
   left: 0;
