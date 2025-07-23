@@ -51,12 +51,12 @@ window.addEventListener("scroll", () => {
 const ourSkillSection = document.querySelector(".our-skills");
 let isOurSkillsExecuted = false;
 window.addEventListener("scroll", () => {
-  if (!isOurSkillsExecuted) {
-    if (window.scrollY > ourSkillSection.offsetTop - 300) {
+  if (window.scrollY > ourSkillSection.offsetTop - 300) {
+    if (!isOurSkillsExecuted) {
       document.querySelectorAll(".progress-holder span").forEach((span) => {
         span.style.width = `${span.dataset.go}%`;
-        isExecuted = true;
       });
+      isExecuted = true;
     }
   }
 });
@@ -64,13 +64,14 @@ window.addEventListener("scroll", () => {
 const statsSection = document.querySelector(".stats");
 let isStatsExcuted = false;
 window.addEventListener("scroll", () => {
-  if (!isStatsExcuted) {
-    if (window.scrollY >= statsSection.offsetTop - 300) {
+  if (window.scrollY >= statsSection.offsetTop - 300) {
+    if (!isStatsExcuted) {
       document.querySelectorAll(".number").forEach((num) => {
-        const interval = setInterval(() => {
-          +num.innerHTML < num.dataset.count
-            ? +num.innerHTML++
-            : window.clearInterval(interval);
+        const intervalHandler = setInterval(() => {
+          +num.textContent++;
+          if (+num.textContent === +num.dataset.count) {
+            window.clearInterval(intervalHandler);
+          }
         }, 500 / num.dataset.count);
       });
       isStatsExcuted = true;
