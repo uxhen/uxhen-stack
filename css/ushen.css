@@ -2358,7 +2358,7 @@ footer .copyright i {
   z-index: 100;
   left: 0;
   top: 0;
-  width: 20px;
+  width: 0;
   height: 8px;
   background: var(--main-color);
   transition: var(--main-transition-duration);
