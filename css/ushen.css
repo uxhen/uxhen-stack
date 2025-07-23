@@ -1334,6 +1334,8 @@ header .container nav > ul > li:last-child:hover .menu {
 .our-skills .container .skills .skill .progress-holder span {
   position: absolute;
   background: var(--main-color);
+  width: 0;
+  transition: var(--main-transition-duration);
   height: 100%;
 }
 /* End Our-Skills */

@@ -1,5 +1,4 @@
 // Header Events
-// Start Header
 const allNavLinks = document.querySelectorAll(
   "header .container nav > ul > li > a",
 );
@@ -22,9 +21,8 @@ window.onclick = function (e) {
   }
 };
 
-// Scroll Events
 // Scroll To Top
-let scrollToTop = document.querySelector(".scroll-to-top");
+const scrollToTop = document.querySelector(".scroll-to-top");
 window.addEventListener("scroll", () => {
   if (window.scrollY > document.documentElement.scrollHeight / 2) {
     scrollToTop.classList.add("show");
@@ -39,6 +37,7 @@ scrollToTop.addEventListener("click", () => {
     behavior: "smooth",
   });
 });
+
 // Start width-on-scroll
 window.addEventListener("scroll", () => {
   const documentYSize = document.documentElement.scrollHeight;
@@ -47,4 +46,34 @@ window.addEventListener("scroll", () => {
   const height = documentYSize - viewportYSize;
   document.querySelector(".width-on-scroll").style.width =
     `${(scrollYSize / height) * 100}%`;
+});
+
+const ourSkillSection = document.querySelector(".our-skills");
+const statsSection = document.querySelector(".stats");
+let isOurSkillsExecuted = false;
+window.addEventListener("scroll", () => {
+  if (!isOurSkillsExecuted) {
+    if (window.scrollY > ourSkillSection.offsetTop - 300) {
+      document.querySelectorAll(".progress-holder span").forEach((span) => {
+        span.style.width = `${span.dataset.go}%`;
+        isExecuted = true;
+      });
+    }
+  }
+});
+
+let isStatsExcuted = false;
+window.addEventListener("scroll", () => {
+  if (!isStatsExcuted) {
+    if (window.scrollY >= statsSection.offsetTop - 300) {
+      document.querySelectorAll(".number").forEach((num) => {
+        const interval = setInterval(() => {
+          +num.innerHTML < num.dataset.count
+            ? +num.innerHTML++
+            : windw.clearInterval(interval);
+        }, 1000 / num.dataset.count);
+      });
+      isStatsExcuted = true;
+    }
+  }
 });
