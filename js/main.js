@@ -42,14 +42,13 @@ scrollToTop.addEventListener("click", () => {
 window.addEventListener("scroll", () => {
   const documentYSize = document.documentElement.scrollHeight;
   const viewportYSize = document.documentElement.clientHeight;
-  const scrollYSize = window.scrollY;
+  const scrollYSize = document.documentElement.scrollTop;
   const height = documentYSize - viewportYSize;
   document.querySelector(".width-on-scroll").style.width =
     `${(scrollYSize / height) * 100}%`;
 });
 
 const ourSkillSection = document.querySelector(".our-skills");
-const statsSection = document.querySelector(".stats");
 let isOurSkillsExecuted = false;
 window.addEventListener("scroll", () => {
   if (!isOurSkillsExecuted) {
@@ -62,6 +61,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
+const statsSection = document.querySelector(".stats");
 let isStatsExcuted = false;
 window.addEventListener("scroll", () => {
   if (!isStatsExcuted) {
@@ -70,8 +70,8 @@ window.addEventListener("scroll", () => {
         const interval = setInterval(() => {
           +num.innerHTML < num.dataset.count
             ? +num.innerHTML++
-            : windw.clearInterval(interval);
-        }, 1000 / num.dataset.count);
+            : window.clearInterval(interval);
+        }, 500 / num.dataset.count);
       });
       isStatsExcuted = true;
     }

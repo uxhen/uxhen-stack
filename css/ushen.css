@@ -1335,7 +1335,9 @@ header .container nav > ul > li:last-child:hover .menu {
   position: absolute;
   background: var(--main-color);
   width: 0;
-  transition: var(--main-transition-duration);
+  transition-property: width;
+  transition-duration: var(--main-transition-duration);
+  transition-timing-function: linear;
   height: 100%;
 }
 /* End Our-Skills */
