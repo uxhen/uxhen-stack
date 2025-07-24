@@ -78,3 +78,22 @@ window.addEventListener("scroll", () => {
     }
   }
 });
+
+// videos-list
+let videosList = document.querySelectorAll(".videos-list a");
+let videosPrev = document.querySelectorAll(".videos-preview img");
+videosList.forEach((videoTarget) => {
+  videoTarget.addEventListener("click", (e) => {
+    e.preventDefault();
+    videosList.forEach((videoLink) => {
+      videoLink.classList.remove("active");
+    });
+    videosPrev.forEach((img) => {
+      img.classList.remove("active");
+    });
+    videoTarget.classList.add("active");
+    document
+      .querySelector(`#${videoTarget.dataset.target}`)
+      .classList.add("active");
+  });
+});

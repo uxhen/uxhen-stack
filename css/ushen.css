@@ -1928,7 +1928,8 @@ header .container nav > ul > li:last-child:hover .menu {
   flex: 1;
 }
 
-.top-videos .videos-container .videos-info ul.videos-list li a:hover {
+.top-videos .videos-container .videos-info ul.videos-list li a:hover,
+.top-videos .videos-container .videos-info ul.videos-list li a.active {
   color: var(--main-color);
 }
 
@@ -1959,12 +1960,30 @@ header .container nav > ul > li:last-child:hover .menu {
 }
 .top-videos .container .videos-container .videos-preview .image {
   flex: 1;
+  overflow: hidden;
+  position: relative;
 }
 .top-videos .container .videos-container .videos-preview img {
+  width: 100%;
   border-radius: 6px;
+  position: relative;
+  z-index: -1;
+  opacity: 0;
+  transition: calc(var(--main-transition-duration) * 4);
+}
+
+.top-videos .container .videos-container .videos-preview img:not(:active) {
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+.top-videos .container .videos-container .videos-preview img.active {
+  position: relative;
+  z-index: 1;
+  opacity: 1;
 }
 .top-videos .container .videos-container .videos-preview p {
-  margin: 200px 10px 20px;
+  margin: 200px 0px 20px;
   background: white;
   padding: 20px;
   margin-top: auto;
@@ -2169,10 +2188,10 @@ header .container nav > ul > li:last-child:hover .menu {
 @keyframes change-background {
   0%,
   100% {
-    background-image: url(../imgs/discount-background1.jpg);
+    background-image: url("../imgs/discount-background1.jpg");
   }
   50% {
-    background-image: url(../imgs/discount-background2.jpg);
+    background-image: url("../imgs/discount-background2.jpg");
   }
 }
 /* End Animation */
